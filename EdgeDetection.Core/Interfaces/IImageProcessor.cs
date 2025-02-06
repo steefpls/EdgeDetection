@@ -1,4 +1,5 @@
 ﻿using EdgeDetection.Core.Models;
+using EdgeDetection.Core.Enums;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,6 +10,7 @@ namespace EdgeDetection.Core.Interfaces
 {
     public interface IImageProcessor
     {
+        void SetOperator(OperatorType operatorType);
         GrayscaleImage ProcessImage(string imagePath);
         void SaveImage(GrayscaleImage image, string path);
     }
