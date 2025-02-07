@@ -3,10 +3,6 @@ using EdgeDetection.Core.Interfaces;
 using EdgeDetection.Core.Models;
 using System;
 using System.Drawing;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.IO;
 
 namespace EdgeDetection.Core.Processing
@@ -53,7 +49,7 @@ namespace EdgeDetection.Core.Processing
             bitmap.Save(path);
         }
 
-        private GrayscaleImage ConvertToGrayscale(System.Drawing.Bitmap bitmap)
+        private GrayscaleImage ConvertToGrayscale(Bitmap bitmap)
         {
             var result = new GrayscaleImage(bitmap.Width, bitmap.Height);
 

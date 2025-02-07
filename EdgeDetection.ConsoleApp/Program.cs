@@ -2,10 +2,6 @@
 using EdgeDetection.Core.Interfaces;
 using EdgeDetection.Core.Processing;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 namespace EdgeDetection.ConsoleApp
 {
     class Program
@@ -35,7 +31,7 @@ namespace EdgeDetection.ConsoleApp
             {
                 if (args.Length != 2)
                 {
-                    System.Console.WriteLine("Usage: EdgeDetection <input-image> <output-image>");
+                    Console.WriteLine("Usage: EdgeDetection <input-image> <output-image>");
                     return;
                 }
 
@@ -43,16 +39,16 @@ namespace EdgeDetection.ConsoleApp
                 var inputPath = args[0];
                 var outputPath = args[1];
 
-                System.Console.WriteLine($"Processing image using {operatorType} operator...");
+                Console.WriteLine($"Processing image using {operatorType} operator...");
                 imageProcessor.SetOperator(operatorType);
                 
                 var processedImage = imageProcessor.ProcessImage(inputPath);                
                 imageProcessor.SaveImage(processedImage, outputPath);
-                System.Console.WriteLine("Processing complete!");
+                Console.WriteLine("Processing complete!");
             }
             catch (Exception ex)
             {
-                System.Console.WriteLine($"Error: {ex.Message}");
+                Console.WriteLine($"Error: {ex.Message}");
             }
         }
         
@@ -61,13 +57,13 @@ namespace EdgeDetection.ConsoleApp
         {
             while (true)
             {
-                System.Console.WriteLine("Select edge detection operator:");
-                System.Console.WriteLine("1. Sobel");
-                System.Console.WriteLine("2. Prewitt");
-                System.Console.WriteLine("3. Roberts");
+                Console.WriteLine("Select edge detection operator:");
+                Console.WriteLine("1. Sobel");
+                Console.WriteLine("2. Prewitt");
+                Console.WriteLine("3. Roberts");
                 
-                var key = System.Console.ReadKey(true);
-                System.Console.WriteLine();
+                var key = Console.ReadKey(true);
+                Console.WriteLine();
 
                 switch (key.KeyChar)
                 {
@@ -75,7 +71,7 @@ namespace EdgeDetection.ConsoleApp
                     case '2': return OperatorType.Prewitt;
                     case '3': return OperatorType.Roberts;
                     default:
-                        System.Console.WriteLine("Invalid selection. Please try again.");
+                        Console.WriteLine("Invalid selection. Please try again.");
                         break;
                 }
             }

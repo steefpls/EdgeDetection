@@ -19,6 +19,7 @@ namespace EdgeDetection.Core.Operators
             int height = image.Height;
             var result = new double[height, width];
 
+            // This implementation skips border pixels, and is interntional
             for (int y = 1; y < height - 1; y++)
             {
                 for (int x = 1; x < width - 1; x++)
