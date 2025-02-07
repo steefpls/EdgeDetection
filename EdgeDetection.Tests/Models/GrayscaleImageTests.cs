@@ -1,4 +1,4 @@
-﻿using EdgeDetection.Core.Models;
+﻿using EdgeDetection.CoreLibrary.Models;
 using Xunit;
 
 namespace EdgeDetection.Tests.Models

@@ -1,9 +1,11 @@
-﻿using EdgeDetection.Core.Enums;
-using EdgeDetection.Core.Interfaces;
-using EdgeDetection.Core.Processing;
+﻿using EdgeDetection.CoreLibrary.Enums;
+using EdgeDetection.CoreLibrary.Interfaces;
+using EdgeDetection.CoreLibrary.Processing;
 using System;
+using System.Runtime.Versioning;
 namespace EdgeDetection.ConsoleApp
 {
+    [SupportedOSPlatform("windows")]
     class Program
     {
         private readonly IImageProcessor imageProcessor;
@@ -38,11 +40,10 @@ namespace EdgeDetection.ConsoleApp
                 var operatorType = ProcessUserInput();
                 var inputPath = args[0];
                 var outputPath = args[1];
-
                 Console.WriteLine($"Processing image using {operatorType} operator...");
                 imageProcessor.SetOperator(operatorType);
-                
-                var processedImage = imageProcessor.ProcessImage(inputPath);                
+
+                var processedImage = imageProcessor.ProcessImage(inputPath);
                 imageProcessor.SaveImage(processedImage, outputPath);
                 Console.WriteLine("Processing complete!");
             }
@@ -51,7 +52,7 @@ namespace EdgeDetection.ConsoleApp
                 Console.WriteLine($"Error: {ex.Message}");
             }
         }
-        
+
         // Reads User input for selection of edge detection operator
         private OperatorType ProcessUserInput()
         {
@@ -61,7 +62,7 @@ namespace EdgeDetection.ConsoleApp
                 Console.WriteLine("1. Sobel");
                 Console.WriteLine("2. Prewitt");
                 Console.WriteLine("3. Roberts");
-                
+
                 var key = Console.ReadKey(true);
                 Console.WriteLine();
 

@@ -1,6 +1,6 @@
-﻿using EdgeDetection.Core.Models;
+﻿using EdgeDetection.CoreLibrary.Models;
 
-namespace EdgeDetection.Core.Interfaces
+namespace EdgeDetection.CoreLibrary.Interfaces
 {
     public interface IEdgeDetector
     {

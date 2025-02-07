@@ -1,4 +1,4 @@
-﻿namespace EdgeDetection.Core.Models
+﻿namespace EdgeDetection.CoreLibrary.Models
 {
     public class GrayscaleImage
     {

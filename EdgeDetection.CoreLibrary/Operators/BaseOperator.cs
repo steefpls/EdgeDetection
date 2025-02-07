@@ -1,14 +1,14 @@
-﻿using EdgeDetection.Core.Interfaces;
-using EdgeDetection.Core.Models;
+﻿using EdgeDetection.CoreLibrary.Interfaces;
+using EdgeDetection.CoreLibrary.Models;
 using System;
 
-namespace EdgeDetection.Core.Operators
+namespace EdgeDetection.CoreLibrary.Operators
 {
     public abstract class BaseOperator : IEdgeDetector
     {
         // Transformation kernels
-        protected double[,] kernelX;
-        protected double[,] kernelY;
+        protected double[,] kernelX = new double[3, 3]; // 3x3 matrix default
+        protected double[,] kernelY = new double[3, 3];
 
         // Detect edges in an image using the operator's kernels
         protected virtual double[,] ApplyKernel(GrayscaleImage image, double[,] kernel)

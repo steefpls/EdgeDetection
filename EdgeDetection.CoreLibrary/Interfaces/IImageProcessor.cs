@@ -1,7 +1,7 @@
-﻿using EdgeDetection.Core.Models;
-using EdgeDetection.Core.Enums;
+﻿using EdgeDetection.CoreLibrary.Models;
+using EdgeDetection.CoreLibrary.Enums;
 
-namespace EdgeDetection.Core.Interfaces
+namespace EdgeDetection.CoreLibrary.Interfaces
 {
     public interface IImageProcessor
     {

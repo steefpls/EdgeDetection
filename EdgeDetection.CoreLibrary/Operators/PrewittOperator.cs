@@ -1,11 +1,11 @@
-﻿using EdgeDetection.Core.Models;
+﻿using EdgeDetection.CoreLibrary.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace EdgeDetection.Core.Operators
+namespace EdgeDetection.CoreLibrary.Operators
 {
     public class PrewittOperator : BaseOperator
     {

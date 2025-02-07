@@ -1,12 +1,12 @@
-﻿using EdgeDetection.Core.Enums;
-using EdgeDetection.Core.Interfaces;
-using EdgeDetection.Core.Models;
-using System;
+﻿using EdgeDetection.CoreLibrary.Enums;
+using EdgeDetection.CoreLibrary.Interfaces;
+using EdgeDetection.CoreLibrary.Models;
 using System.Drawing;
-using System.IO;
+using System.Runtime.Versioning;
 
-namespace EdgeDetection.Core.Processing
+namespace EdgeDetection.CoreLibrary.Processing
 {
+    [SupportedOSPlatform("windows")]
     public class ImageProcessor : IImageProcessor
     {
         private readonly OperatorFactory operatorFactory;
@@ -30,11 +30,17 @@ namespace EdgeDetection.Core.Processing
         public GrayscaleImage ProcessImage(string imagePath)
         {
             var realPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, imagePath);
-            
-            var bitmap = new Bitmap(realPath);
-            var grayscale = ConvertToGrayscale(bitmap);
-            
-            return currentOperator.DetectEdges(grayscale);
+            try
+            {
+                var bitmap = new Bitmap(imagePath);
+                var grayscale = ConvertToGrayscale(bitmap);
+                return currentOperator.DetectEdges(grayscale);
+            }
+            catch (Exception)
+            {
+                Console.WriteLine($"Bitmap Creation Failed.");
+                throw ;
+            }
         }
 
         // Saves bitmap to image file

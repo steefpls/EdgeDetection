@@ -1,4 +1,4 @@
-﻿namespace EdgeDetection.Core.Enums
+﻿namespace EdgeDetection.CoreLibrary.Enums
 {
     public enum OperatorType
     {

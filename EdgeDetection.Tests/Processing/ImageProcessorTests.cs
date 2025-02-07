@@ -1,9 +1,11 @@
-﻿using EdgeDetection.Core.Processing;
-using EdgeDetection.Core.Enums;
+﻿using EdgeDetection.CoreLibrary.Processing;
+using EdgeDetection.CoreLibrary.Enums;
 using Xunit;
+using System.Runtime.Versioning;
 
 namespace EdgeDetection.Tests.Processing
 {
+    [SupportedOSPlatform("windows")]
     public class ImageProcessorTests
     {
         private readonly ImageProcessor _processor;
@@ -56,6 +58,7 @@ namespace EdgeDetection.Tests.Processing
             Assert.NotNull(result);
         }
 
+        [Fact]
         public void Dispose()
         {
             // Cleanup test file

@@ -1,4 +1,4 @@
-﻿namespace EdgeDetection.Core.Operators
+﻿namespace EdgeDetection.CoreLibrary.Operators
 {
     public class SobelOperator : BaseOperator
     {

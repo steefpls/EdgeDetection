@@ -1,13 +1,13 @@
-﻿using EdgeDetection.Core.Enums;
-using EdgeDetection.Core.Interfaces;
-using EdgeDetection.Core.Operators;
+﻿using EdgeDetection.CoreLibrary.Enums;
+using EdgeDetection.CoreLibrary.Interfaces;
+using EdgeDetection.CoreLibrary.Operators;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace EdgeDetection.Core.Processing
+namespace EdgeDetection.CoreLibrary.Processing
 {
     public class OperatorFactory
     {

@@ -1,6 +1,6 @@
-﻿using EdgeDetection.Core.Processing;
-using EdgeDetection.Core.Enums;
-using EdgeDetection.Core.Operators;
+﻿using EdgeDetection.CoreLibrary.Processing;
+using EdgeDetection.CoreLibrary.Enums;
+using EdgeDetection.CoreLibrary.Operators;
 using Xunit;
 using System;
 

@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "EdgeDetection.ConsoleApp": {
+      "commandName": "Project",
+      "commandLineArgs": "input.jpg output.png"
+    }
+  }
+}

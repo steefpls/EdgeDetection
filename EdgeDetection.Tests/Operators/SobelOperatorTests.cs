@@ -1,4 +1,4 @@
-﻿using EdgeDetection.Core.Operators;
+﻿using EdgeDetection.CoreLibrary.Operators;
 using EdgeDetection.Tests.TestUtils;
 using Xunit;
 

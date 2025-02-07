@@ -1,6 +1,6 @@
-﻿using EdgeDetection.Core.Models;
+﻿using EdgeDetection.CoreLibrary.Models;
 
-namespace EdgeDetection.Core.Operators
+namespace EdgeDetection.CoreLibrary.Operators
 {
     // This operator was added to ensure the code would be easily scalable and maintainable if need be
     public class RobertsOperator : BaseOperator
