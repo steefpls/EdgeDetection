@@ -19,6 +19,7 @@ namespace EdgeDetection.ConsoleApp
             imageProcessor = new ImageProcessor(operatorFactory);
         }
 
+        // Application Entry Point
         static void Main(string[] args)
         {
             var program = new Program();
@@ -27,6 +28,7 @@ namespace EdgeDetection.ConsoleApp
             Console.ReadKey();
         }
 
+        // Application Logic and User Interface
         public void Run(string[] args)
         {
             try

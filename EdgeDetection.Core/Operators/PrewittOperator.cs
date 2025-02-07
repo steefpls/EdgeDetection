@@ -31,12 +31,5 @@ namespace EdgeDetection.Core.Operators
                 {  1,  1,  1 }
             };
         }
-
-        public override GrayscaleImage DetectEdges(GrayscaleImage image)
-        {
-            var gradientX = ApplyKernel(image, kernelX);
-            var gradientY = ApplyKernel(image, kernelY);
-            return CombineGradients(gradientX, gradientY);
-        }
     }
 }

@@ -10,8 +10,8 @@ namespace EdgeDetection.Core.Interfaces
 {
     public interface IImageProcessor
     {
-        void SetOperator(OperatorType operatorType);
         GrayscaleImage ProcessImage(string imagePath);
+        void SetOperator(OperatorType operatorType);
         void SaveImage(GrayscaleImage image, string path);
     }
 }

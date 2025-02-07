@@ -12,9 +12,7 @@ namespace EdgeDetection.Core.Operators
     {
         protected double[,] kernelX;
         protected double[,] kernelY;
-
-        public abstract GrayscaleImage DetectEdges(GrayscaleImage image);
-
+        
         protected virtual double[,] ApplyKernel(GrayscaleImage image, double[,] kernel)
         {
             int width = image.Width;
@@ -60,6 +58,12 @@ namespace EdgeDetection.Core.Operators
             }
 
             return result;
+        }
+        public virtual GrayscaleImage DetectEdges(GrayscaleImage image)
+        {
+            var gradientX = ApplyKernel(image, kernelX);
+            var gradientY = ApplyKernel(image, kernelY);
+            return CombineGradients(gradientX, gradientY);
         }
     }
 }
