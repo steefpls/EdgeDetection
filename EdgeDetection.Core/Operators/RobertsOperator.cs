@@ -2,6 +2,7 @@
 
 namespace EdgeDetection.Core.Operators
 {
+    // This operator was added to ensure the code would be easily scalable and maintainable if need be
     public class RobertsOperator : BaseOperator
     {
         public RobertsOperator()
@@ -24,6 +25,7 @@ namespace EdgeDetection.Core.Operators
             };
         }
 
+        // Kernel is applied differently from Prewitt and Sobel
         protected override double[,] ApplyKernel(GrayscaleImage image, double[,] kernel)
         {
             int width = image.Width;

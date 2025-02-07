@@ -1,10 +1,6 @@
 ﻿using EdgeDetection.Core.Interfaces;
 using EdgeDetection.Core.Models;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace EdgeDetection.Core.Operators
 {
@@ -19,7 +15,7 @@ namespace EdgeDetection.Core.Operators
             int height = image.Height;
             var result = new double[height, width];
 
-            // This implementation skips border pixels, and is interntional
+            // This implementation skips border pixels, and is intentional
             for (int y = 1; y < height - 1; y++)
             {
                 for (int x = 1; x < width - 1; x++)
