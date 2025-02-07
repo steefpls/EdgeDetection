@@ -15,7 +15,7 @@ namespace EdgeDetection.Core.Operators
 
         public abstract GrayscaleImage DetectEdges(GrayscaleImage image);
 
-        protected double[,] ApplyKernel(GrayscaleImage image, double[,] kernel)
+        protected virtual double[,] ApplyKernel(GrayscaleImage image, double[,] kernel)
         {
             int width = image.Width;
             int height = image.Height;

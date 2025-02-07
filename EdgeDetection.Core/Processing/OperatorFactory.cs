@@ -20,6 +20,8 @@ namespace EdgeDetection.Core.Processing
                     return new SobelOperator();
                 case OperatorType.Prewitt:
                     return new PrewittOperator();
+                case OperatorType.Roberts:
+                    return new RobertsOperator();
                 default:
                     throw new ArgumentException("Invalid operator type specified.");
             }

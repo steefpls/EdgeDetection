@@ -14,6 +14,7 @@ namespace EdgeDetection.Core.Operators
             InitializeKernels();
         }
 
+        // Initialize the transformation kernels with Prewitt values
         private void InitializeKernels()
         {
             kernelX = new double[,]

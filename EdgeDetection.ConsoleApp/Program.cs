@@ -62,6 +62,7 @@ namespace EdgeDetection.ConsoleApp
                 System.Console.WriteLine("Select edge detection operator:");
                 System.Console.WriteLine("1. Sobel");
                 System.Console.WriteLine("2. Prewitt");
+                System.Console.WriteLine("3. Roberts");
                 
                 var key = System.Console.ReadKey(true);
                 System.Console.WriteLine();
@@ -70,6 +71,7 @@ namespace EdgeDetection.ConsoleApp
                 {
                     case '1': return OperatorType.Sobel;
                     case '2': return OperatorType.Prewitt;
+                    case '3': return OperatorType.Roberts;
                     default:
                         System.Console.WriteLine("Invalid selection. Please try again.");
                         break;

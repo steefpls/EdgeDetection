@@ -48,8 +48,8 @@
     <Compile Include="Models\GrayscaleImage.cs" />
     <Compile Include="Operators\BaseOperator.cs" />
     <Compile Include="Operators\PrewittOperator.cs" />
+    <Compile Include="Operators\RobertsOperator.cs" />
     <Compile Include="Operators\SobelOperator.cs" />
-    <Compile Include="Processing\ImageLoader.cs" />
     <Compile Include="Processing\ImageProcessor.cs" />
     <Compile Include="Processing\OperatorFactory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
