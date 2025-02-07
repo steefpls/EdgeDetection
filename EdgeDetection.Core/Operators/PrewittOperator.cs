@@ -9,6 +9,7 @@ namespace EdgeDetection.Core.Operators
 {
     public class PrewittOperator : BaseOperator
     {
+        // Constructor
         public PrewittOperator()
         {
             InitializeKernels();

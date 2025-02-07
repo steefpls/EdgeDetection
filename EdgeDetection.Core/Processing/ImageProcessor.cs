@@ -12,21 +12,24 @@ namespace EdgeDetection.Core.Processing
         private readonly OperatorFactory operatorFactory;
         private IEdgeDetector currentOperator;
 
+        // Constructor
         public ImageProcessor(OperatorFactory operatorFactory)
         {
             this.operatorFactory = operatorFactory;
             this.currentOperator = operatorFactory.CreateOperator(OperatorType.Sobel); // Default
         }
         
+        // Creates an operator and sets it as the currentOperator
         public void SetOperator(OperatorType type)
         {
             currentOperator = operatorFactory.CreateOperator(type);
         }
 
+        // Converts Image to grayscale then processes it using the current operator
+        // TODO: Change realPath processing to use a specific designated folder
         public GrayscaleImage ProcessImage(string imagePath)
         {
             var realPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, imagePath);
-            
             
             var bitmap = new Bitmap(realPath);
             var grayscale = ConvertToGrayscale(bitmap);
@@ -34,6 +37,8 @@ namespace EdgeDetection.Core.Processing
             return currentOperator.DetectEdges(grayscale);
         }
 
+        // Saves bitmap to image file
+        // TODO: Change path processing to use a specific designated folder
         public void SaveImage(GrayscaleImage image, string path)
         {
             var bitmap = new Bitmap(image.Width, image.Height);
@@ -49,6 +54,7 @@ namespace EdgeDetection.Core.Processing
             bitmap.Save(path);
         }
 
+        // Converts bitmap to grayscale image
         private GrayscaleImage ConvertToGrayscale(Bitmap bitmap)
         {
             var result = new GrayscaleImage(bitmap.Width, bitmap.Height);

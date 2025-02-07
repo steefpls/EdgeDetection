@@ -6,9 +6,11 @@ namespace EdgeDetection.Core.Operators
 {
     public abstract class BaseOperator : IEdgeDetector
     {
+        // Transformation kernels
         protected double[,] kernelX;
         protected double[,] kernelY;
-        
+
+        // Detect edges in an image using the operator's kernels
         protected virtual double[,] ApplyKernel(GrayscaleImage image, double[,] kernel)
         {
             int width = image.Width;
@@ -35,6 +37,7 @@ namespace EdgeDetection.Core.Operators
             return result;
         }
 
+        // Combines the results of the X and Y kernels to get the final edge detection result
         protected GrayscaleImage CombineGradients(double[,] gradientX, double[,] gradientY)
         {
             int height = gradientX.GetLength(0);
@@ -45,8 +48,7 @@ namespace EdgeDetection.Core.Operators
             {
                 for (int x = 0; x < width; x++)
                 {
-                    double magnitude = Math.Sqrt(gradientX[y, x] * gradientX[y, x] +
-                                               gradientY[y, x] * gradientY[y, x]);
+                    double magnitude = Math.Sqrt(gradientX[y, x] * gradientX[y, x] + gradientY[y, x] * gradientY[y, x]);
 
                     // Normalize to 0-255 range
                     byte pixel = (byte)Math.Min(255, Math.Max(0, magnitude));
@@ -56,6 +58,8 @@ namespace EdgeDetection.Core.Operators
 
             return result;
         }
+
+        // Returns Grayscale Image with edges represented as white pixels
         public virtual GrayscaleImage DetectEdges(GrayscaleImage image)
         {
             var gradientX = ApplyKernel(image, kernelX);

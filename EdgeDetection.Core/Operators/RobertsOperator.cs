@@ -10,6 +10,7 @@ namespace EdgeDetection.Core.Operators
             InitializeKernels();
         }
 
+        // Initialize the transformation kernels with Roberts values
         private void InitializeKernels()
         {
             kernelX = new double[,]

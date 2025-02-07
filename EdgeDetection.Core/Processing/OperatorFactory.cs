@@ -11,7 +11,7 @@ namespace EdgeDetection.Core.Processing
 {
     public class OperatorFactory
     {
-        //Creates an instance of an edge detection operator based on the specified operator type.
+        // Creates an instance of an edge detection operator based on the specified operator type.
         public IEdgeDetector CreateOperator(OperatorType operatorType)
         {
             switch (operatorType)
@@ -23,7 +23,7 @@ namespace EdgeDetection.Core.Processing
                 case OperatorType.Roberts:
                     return new RobertsOperator();
                 default:
-                    throw new ArgumentException("Invalid operator type specified.");
+                    throw new ArgumentException("Invalid operator type specified."); // Should never happen
             }
         }
     }
