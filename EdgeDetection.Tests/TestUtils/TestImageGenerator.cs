@@ -4,6 +4,7 @@ namespace EdgeDetection.Tests.TestUtils
 {
     public static class TestImageGenerator
     {
+        // Create a simple test image with a gradient pattern
         public static GrayscaleImage CreateTestImage(int width, int height)
         {
             var image = new GrayscaleImage(width, height);
@@ -20,7 +21,7 @@ namespace EdgeDetection.Tests.TestUtils
 
             return image;
         }
-
+        // Create a simple test image with a uniform value
         public static GrayscaleImage CreateUniformImage(int width, int height, byte value)
         {
             var image = new GrayscaleImage(width, height);

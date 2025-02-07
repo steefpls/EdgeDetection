@@ -43,7 +43,9 @@ namespace EdgeDetection.ConsoleApp
                 Console.WriteLine($"Processing image using {operatorType} operator...");
                 imageProcessor.SetOperator(operatorType);
 
-                var processedImage = imageProcessor.ProcessImage(inputPath);
+                var realPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, inputPath);
+
+                var processedImage = imageProcessor.ProcessImage(realPath);
                 imageProcessor.SaveImage(processedImage, outputPath);
                 Console.WriteLine("Processing complete!");
             }

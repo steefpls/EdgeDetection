@@ -13,10 +13,11 @@ namespace EdgeDetection.Tests.Operators
             _operator = new SobelOperator();
         }
 
+        // This test is expected to pass since the operator should detect no edges in a uniform image
         [Fact]
         public void DetectEdges_UniformImage_ReturnsUniformImage()
         {
-            // Arrange
+            // Generate a uniform image
             var image = TestImageGenerator.CreateUniformImage(10, 10, 128);
 
             // Act
@@ -32,10 +33,11 @@ namespace EdgeDetection.Tests.Operators
             }
         }
 
+        // This test is expected to pass since the operator should detect edges in a non-uniform image
         [Fact]
         public void DetectEdges_GradientImage_DetectsEdges()
         {
-            // Arrange
+            // Generate a gradient image
             var image = TestImageGenerator.CreateTestImage(10, 10);
 
             // Act

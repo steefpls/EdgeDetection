@@ -26,25 +26,29 @@ namespace EdgeDetection.CoreLibrary.Processing
         }
 
         // Converts Image to grayscale then processes it using the current operator
-        // TODO: Change realPath processing to use a specific designated folder
-        public GrayscaleImage ProcessImage(string imagePath)
+        public GrayscaleImage ProcessImage(string path)
         {
-            var realPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, imagePath);
+            Console.WriteLine($"Processing image: {path}");
+            // Check if file exists before creating bitmap
+            if (!File.Exists(path))
+            {
+                throw new FileNotFoundException("File not found.", path);
+            }
+
             try
             {
-                var bitmap = new Bitmap(imagePath);
+                var bitmap = new Bitmap(path);
                 var grayscale = ConvertToGrayscale(bitmap);
                 return currentOperator.DetectEdges(grayscale);
             }
             catch (Exception)
             {
                 Console.WriteLine($"Bitmap Creation Failed.");
-                throw ;
+                throw;
             }
         }
 
         // Saves bitmap to image file
-        // TODO: Change path processing to use a specific designated folder
         public void SaveImage(GrayscaleImage image, string path)
         {
             var bitmap = new Bitmap(image.Width, image.Height);

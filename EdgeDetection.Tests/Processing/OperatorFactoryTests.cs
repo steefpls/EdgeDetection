@@ -19,22 +19,19 @@ namespace EdgeDetection.Tests.Processing
         [InlineData(OperatorType.Sobel, typeof(SobelOperator))]
         [InlineData(OperatorType.Prewitt, typeof(PrewittOperator))]
         [InlineData(OperatorType.Roberts, typeof(RobertsOperator))]
+        // This test is expected to pass since the operator type is valid
         public void CreateOperator_ValidType_ReturnsCorrectOperator(OperatorType type, Type expectedType)
         {
-            // Act
             var operatorFactory = _factory.CreateOperator(type);
-
-            // Assert
             Assert.IsType(expectedType, operatorFactory);
         }
 
         [Fact]
+        // This test is expected to throw an ArgumentException since the operator type is invalid
         public void CreateOperator_InvalidType_ThrowsArgumentException()
         {
-            // Arrange
             OperatorType invalidType = (OperatorType)999;
 
-            // Act & Assert
             Assert.Throws<ArgumentException>(() => _factory.CreateOperator(invalidType));
         }
     }

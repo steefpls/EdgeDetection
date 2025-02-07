@@ -2,15 +2,16 @@
 using EdgeDetection.Tests.TestUtils;
 using Xunit;
 
+
 namespace EdgeDetection.Tests.Operators
 {
-    public class PrewittOperatorTests
+    public class RobertsOperatorTests
     {
-        private readonly PrewittOperator _operator;
+        private readonly RobertsOperator _operator;
 
-        public PrewittOperatorTests()
+        public RobertsOperatorTests()
         {
-            _operator = new PrewittOperator();
+            _operator = new RobertsOperator();
         }
 
         // This test is expected to pass since the operator should detect no edges in a uniform image
