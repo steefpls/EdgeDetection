@@ -8,9 +8,9 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("EdgeDetection.ConsoleApp")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Shark Bunny Studio")]
+[assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("EdgeDetection.ConsoleApp")]
-[assembly: AssemblyCopyright("Copyright © Shark Bunny Studio 2025")]
+[assembly: AssemblyCopyright("")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
