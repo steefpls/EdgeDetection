@@ -54,6 +54,11 @@ This project implements edge detection algorithms in C#, featuring Sobel, Prewit
      2: Prewitt operator
      3: Roberts operator
 
+### Example Output  
+| Original Image | Sobel Output | Prewitt Output | Roberts Output |
+|---------------|-------------|---------------|---------------|
+| ![Input](examples/input.jpg) | ![Sobel](examples/sobel.png) | ![Prewitt](examples/prewitt.png) | ![Roberts](examples/roberts.png) |
+
 ## Architecture
 
 The project follows SOLID principles and clean architecture:
